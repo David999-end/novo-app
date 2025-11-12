@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Cores principais */
+  --color-background: oklch(0% 0 0);
+  --color-foreground: oklch(98% 0 0);
+  
+  /* Cores de UI */
+  --color-card: oklch(10% 0 0);
+  --color-card-foreground: oklch(98% 0 0);
+  --color-popover: oklch(10% 0 0);
+  --color-popover-foreground: oklch(98% 0 0);
+  
+  /* Cores primárias */
+  --color-primary: oklch(70% 0.2 270);
+  --color-primary-foreground: oklch(98% 0 0);
+  
+  /* Cores secundárias */
+  --color-secondary: oklch(20% 0 0);
+  --color-secondary-foreground: oklch(98% 0 0);
+  
+  /* Cores de estado */
+  --color-muted: oklch(20% 0 0);
+  --color-muted-foreground: oklch(60% 0 0);
+  --color-accent: oklch(20% 0 0);
+  --color-accent-foreground: oklch(98% 0 0);
+  
+  /* Cores de feedback */
+  --color-destructive: oklch(60% 0.2 25);
+  --color-destructive-foreground: oklch(98% 0 0);
+  
+  /* Bordas e inputs */
+  --color-border: oklch(20% 0 0);
+  --color-input: oklch(20% 0 0);
+  --color-ring: oklch(70% 0.2 270);
+  
+  /* Raio de borda */
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-black text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .animate-wave {
+    animation: wave 1s ease-in-out infinite;
+  }
+  
+  @keyframes wave {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(20deg);
+    }
+    75% {
+      transform: rotate(-20deg);
+    }
+  }
+}
